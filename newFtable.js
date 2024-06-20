@@ -9,7 +9,7 @@ db.serialize(() => {
   // db.serialize()는 SQLite3 모듈에서 제공하는 메서드로, 데이터베이스 작업을 직렬화된 방식으로 실행하기 위해 사용됩니다. 이는 모든 데이터베이스 명령이 순차적으로 실행되도록 보장합니다. 즉, 하나의 작업이 완료된 후에 다음 작업이 실행됩니다.
 
   db.run(
-    "CREATE TABLE fkeytest (id INTEGER PRIMARY KEY, name TEXT NOT NULL, introduce TEXT)"
+    "CREATE TABLE zoomoon (id INTEGER, food TEXT NOT NULL, FOREIGN KEY(id) REFERENCES fkeytest(id))"
     // 테이블이름 뒤 () 에 들어가는 내용은 형식이 정해져있는데 ([테이블의 열의 이름] [데이터 타입] [제약조건])
   );
 
